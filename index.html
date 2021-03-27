@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <title>Webové aplikace</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- STYLESHEETS & SCRIPTS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7ffc9ccdb4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <!--<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><i class="fas fa-file-code"></i> Webové aplikace</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#types">Typy aplikací</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#phases">Fáze návrhu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#security">Bezpečnostní rizika</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cms">Redakční systémy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ecommerce">E-commerce</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <div class="row text-white">
+        <div class="col-md-5 hero-text">
+          <h1 data-aos="fade-up" data-aos-duration="800">Web App</h1>
+          <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">Webová aplikace je aplikace poskytovaná
+            uživatelům z webového serveru přes internet nebo jinou vnitropodnikovou sít’.</p>
+        </div>
+        <div class="col-md-7 hero-img">
+          <img src="img/hero.png" alt="Webové aplikace - development" class="img-fluid" data-aos="fade-left"
+            data-aos-duration="1000" data-aos-delay="800" data-aos-once="true">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <span class="anchor" id="types"></span>
+    <section class="sec-bg-white" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" data-aos-once="true">
+      <h2>Typy webových aplikací</h2>  
+      <hr>
+      <div class="row">
+        <div class="col-lg-6">
+          <h3>Vícevrstvé webové aplikace</h3>
+          <p>
+            <ul>
+              <li>Díky pokročilým webovým technologiím je možné realizovat webovým prostředím stále složitější a
+                komplexnější aplikace, včetně informačních systémů, cloudových služeb apod.</li>
+              <li>Současné webové aplikace jsou strukturovány do více vrstev, tradičně se uvádějí tři základní vrstvy:
+              </li>
+              <ol>
+                <li>Funkci <strong>prezentační vrstvy</strong> plní zpravidla webový prohlížeč.</li>
+                <li><strong>Logickou vrstvu</strong> představují technologie na dynamické generování webových stránek
+                  (PHP, ASP.NET, JSP apod.), jež se nejčastěji zpracovávají na straně webového serveru.</li>
+                <li><strong>Datovou vrstvu</strong> mohou tvořit databáze umístěné na databázovém serveru, ale zdrojem
+                  dat mohou být také datové soubory nebo internetové služby.</li>
+              </ol>
+            </ul>
+          </p>
+          <div class="img-center">
+            <img src="img/vicevrstve-webove-aplikace.png" alt="Vícevrstvé webové aplikace schéma" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h3>MVC (Model-View-Controller)</h3>
+        </div>
+        <div class="col-lg-6">
+          <h3>Webová API</h3>
+        </div>
+        <div class="col-lg-6">
+          <h3>Django framework</h3>
+        </div>
+      </div>
+    </section>
+
+    <span class="anchor" id="phases"></span>
+    <section class="sec-bg-grey">
+      <h2>Fáze návrhu webových aplikací</h2>
+      <hr>
+    </section>
+
+    <span class="anchor" id="security"></span>
+    <section class="sec-bg-purple">
+      <h2>Bezpečnostní rizika webových aplikací</h2>
+      <hr>
+    </section>
+
+    <span class="anchor" id="cms"></span>
+    <section class="sec-bg-white">
+      <h2>Redakční systémy</h2>
+      <hr>
+    </section>
+
+    <span class="anchor" id="ecommerce"></span>
+    <section class="sec-bg-grey">
+      <h2>E-commerce</h2>
+      <hr>
+    </section>
+  </main>
+
+  <footer class="container-fluid text-center p-4">
+    <p class="author">Vytvořil s <i class="fas fa-heart"></i> <strong>Lukáš Sukeník</strong><br>
+      <a href="https://github.com/lukyncze">Github</a> <i class="fab fa-github"></i></p>
+  </footer>
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!--<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>-->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
