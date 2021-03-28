@@ -24,36 +24,42 @@ body {
 
 /* HEADERS */
 h1 {
-    font-size: 4.5rem;
-    font-weight: 800;
+    font-family: 'Bitter', serif;
+    font-size: 5rem;
 }
 
 h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2rem;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    font-weight: 600;
 }
 
 h3 {
     color: var(--purple);
     font-size: 1.3rem;
+    font-weight: 700;
     text-align: center !important;
     margin-top: 2rem;
-    font-weight: 700;
 }
 
 /* NAVBAR */
+#icon {
+    height: 2.5rem;
+}
+
 .navbar-nav li {
     padding-left: 0.75rem;
 }
 
 .navbar-nav li a {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 200;
 }
 
 .bg-dark {
-    background-color: var(--grey)!important;
+    background-color: var(--grey) !important;
     padding: 1rem 2rem;
 }
 
@@ -84,9 +90,10 @@ header {
 }
 
 .hero-text p {
-    margin-top: 1.8rem;
     font-size: 1.3rem;
+    font-weight: 300;
     line-height: 1.8em;
+    margin-top: 1.8rem;
     max-width: 440px;
 }
 
@@ -95,15 +102,15 @@ section {
     padding: 1rem;
 }
 
-section ul > li {
+section ul>li {
     list-style: none;
 }
-  
-section ul > li::before {
+
+section ul>li::before {
     content: "\2022";
     color: var(--purple);
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
 }
 
@@ -132,7 +139,7 @@ section hr {
     margin: 1.5rem 0;
 }
 
-.anchor{
+.anchor {
     display: block;
     height: 70px;
     margin-top: -70px;
@@ -140,8 +147,22 @@ section hr {
 }
 
 /* FOOTER */
+footer {
+    font-weight: 100;
+    text-align: center;
+    padding: 1.8rem;
+}
+
 footer p {
     margin-bottom: 0;
+}
+
+footer a {
+    color: #918bfdf3;
+}
+
+footer a:hover {
+    color: var(--purple-sel);
 }
 
 /* MEDIA QUERIES */
@@ -155,6 +176,7 @@ footer p {
     .container {
         max-width: 1200px;
     }
+
     .hero-text {
         margin-top: 2.4rem;
     }
@@ -162,8 +184,9 @@ footer p {
 
 @media screen and (max-width: 1200px) {
     h1 {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
+
     .navbar-nav li a {
         font-size: 0.7rem;
     }
@@ -173,7 +196,38 @@ footer p {
     .navbar-nav li {
         padding-top: 0.7rem;
     }
+
     .navbar-nav li a {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .navbar-nav li a {
+        font-size: 0.9rem;
+    }
+
+    .navbar {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
     }
 }

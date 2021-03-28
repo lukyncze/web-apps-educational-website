@@ -1,1 +1,1 @@
-AOS.init();
+sal({threshold: 0.01,});
