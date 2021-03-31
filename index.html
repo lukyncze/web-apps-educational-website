@@ -29,6 +29,7 @@
     href="https://fonts.googleapis.com/css2?family=Bitter:wght@800&family=Crimson+Pro:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/7ffc9ccdb4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/lightbox.css">
   <link rel="stylesheet" href="css/sal.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -78,7 +79,7 @@
             uživatelům z webového serveru přes internet nebo jinou vnitropodnikovou sít’.</p>
         </div>
         <div class="col-md-7 hero-img">
-          <img src="img/hero.png" alt="Webové aplikace - development" class="img-fluid" data-sal="slide-left"
+          <img src="img/content/hero.png" alt="Webové aplikace - development" class="img-fluid" data-sal="slide-left"
             style="--sal-duration: 1s; --sal-delay: 0.8s;">
         </div>
       </div>
@@ -112,10 +113,15 @@
           </p>
           <div class="row">
             <div class="col-xl-6 img-center">
-              <img src="img/PLD-vrstvy.jpg" alt="Vícevrstvé webové aplikace schéma" class="img-fluid">
+              <a href="img/content/PLD-vrstvy.jpg" data-lightbox="typy-aplikaci"
+                data-title="Vícevrstvé webové aplikace schéma">
+                <img src="img/content/PLD-vrstvy.jpg" alt="Vícevrstvé webové aplikace schéma" class="img-fluid">
+              </a>
             </div>
             <div class="col-xl-6 img-center">
-              <img src="img/MVC-model.jpg" alt="MVC model" class="img-fluid">
+              <a href="img/content/MVC-model.jpg" data-lightbox="typy-aplikaci" data-title="MVC model">
+                <img src="img/content/MVC-model.jpg" alt="MVC model" class="img-fluid">
+              </a>
             </div>
           </div>
         </div>
@@ -152,11 +158,9 @@
                 parametry: http://www.server.com/article/detail/5
                 Požadavek zpracuje neprve router, který podle zadaných parametrů zajistí jeho přesměrování na správný
                 <strong>router</strong>. V tomto případě bude volán <em>ArticleController</em> a budou mu předány
-                parametry view a 5.
-                Controller na základě parametrů provede příslušné akce: zavolá model, jehož úkolem je v databázi najít
-                článek s id 5, a získaná data poté controller předá pohledu (view) s názvem detail.
-                Data jsou vložena na určené místo v šabloně a pohled je vyrenderován.
-              </li>
+                parametry view a 5. Controller na základě parametrů provede příslušné akce: zavolá model, jehož úkolem
+                je v databázi najít článek s id 5, a získaná data poté controller předá pohledu (view) s názvem detail.
+                Data jsou vložena na určené místo v šabloně a pohled je vyrenderován.</li>
             </ul>
           </p>
         </div>
@@ -239,7 +243,9 @@
             </ul>
           </p>
           <div class="img-center">
-            <img src="img/REST-API.png" alt="REST API schéma" class="img-fluid">
+            <a href="img/content/REST-API.png" data-lightbox="typy-aplikaci" data-title="REST API schéma">
+              <img src="img/content/REST-API.png" alt="REST API schéma" class="img-fluid">
+            </a>
           </div>
         </div>
         <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
@@ -266,7 +272,9 @@
             </ul>
           </p>
           <div class="img-center">
-            <img src="img/Websocket.png" alt="Socket.io schéma" class="img-fluid">
+            <a href="img/content/Websocket.png" data-lightbox="typy-aplikaci" data-title="Socket.io schéma">
+              <img src="img/content/Websocket.png" alt="Socket.io schéma" class="img-fluid">
+            </a>
           </div>
         </div>
         <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
@@ -345,7 +353,7 @@
       <div class="row justify-content-center p-4">
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-1.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-1.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">1. Strategie</h4>
               <p class="card-text">Hledání kompromisu mezi potřebami uživatelů budoucí aplikace a zájmů tvůrců aplikace.
@@ -356,7 +364,7 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-2.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">2. Požadavky</h4>
               <p class="card-text">Na základě získaných informací jsou specifikovány všechny funkce a možnosti, jež by
@@ -367,7 +375,7 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-3.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-3.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">3. UX/UI Design</h4>
               <p class="card-text">V této fázi se řeší tzv. UX/UI design. Jednoduše jde o předběžný návrh architektury a
@@ -378,7 +386,7 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-4.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-4.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">4. Vývoj stránek</h4>
               <p class="card-text">V této fázi již probíhá samotný vývoj stránek kodérem či programátorem. Nejprve jde o
@@ -389,7 +397,7 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-5.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-5.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">5. Testování</h4>
               <p class="card-text">Po dokončení stránek je web vystaven na testovací prostředí, umístěném na testovací
@@ -400,7 +408,7 @@
         </div>
         <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
           <div class="card">
-            <img class="card-img-top" src="img/vyvoj-6.jpg" alt="Card image cap">
+            <img class="card-img-top" src="img/content/vyvoj-6.jpg" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">6. Uvedení do provozu</h4>
               <p class="card-text">Po schválení webu ze zákazníkovy strany dojde ke spuštění webu do ostrého provozu –
@@ -426,11 +434,10 @@
                   bezpečnostních chyb ve skriptech</strong> (především <strong>neošetřené vstupy</strong>).</li>
               <li>Útočník díky těmto chybám v zabezpečení webové aplikace dokáže do stránek <strong>podstrčit svůj
                   vlastní javascriptový kód</strong>, což může využít buď pouze k poškození vzhledu stránky, jejímu
-                znefunkčnění, získávání
-                citlivých údajů návštěvníků stránek nebo obcházení bezpečnostních prvků aplikace.</li>
+                znefunkčnění, získávání citlivých údajů návštěvníků stránek nebo obcházení bezpečnostních prvků
+                aplikace.</li>
               <li>Často je též využíván při <em>phishingu</em> tak, že je skrze XSS zranitelnosti uživateli ukázán jiný
-                obsah na
-                jinak důvěryhodné stránce.</li>
+                obsah na jinak důvěryhodné stránce.</li>
               <strong>Obrana:</strong>
               <li>V textech zadávaných uživateli je třeba speciální znaky nahrazovat entitami.</li>
               <li>Kontrolovat URL od uživatele, která jdou do obrázků, odkazů a podobně, protože mohou začínat např. na
@@ -647,7 +654,8 @@
                 <div class="col-md-6">
                   <dt>B-2-B</dt>
                   <dd><em>Business to Business</em> (obchodník obchodníkovi)</dd>
-                  <p>Většinou fungují na principu elektronické výměny dat (objednávek, faktur). Vyšším stupněm jsou
+                  <p>
+                    Většinou fungují na principu elektronické výměny dat (objednávek, faktur). Vyšším stupněm jsou
                     internetová tržiště pro zprostředkování obchodů. Nejvyspělejší variantou jsou komunikační a
                     distribuční sítě, kde dochází k transakcím v reálném čase, včetně finančních a logistických operací.
                   </p>
@@ -655,22 +663,27 @@
                 <div class="col-md-6">
                   <dt>B-2-C</dt>
                   <dd><em>Business to Customer</em> (obchodník zákazníkovi)</dd>
-                  <p>Na základní úrovni je to webová stránka plnící funkci elektronického katalogu, doplněná případně o
+                  <p>
+                    Na základní úrovni je to webová stránka plnící funkci elektronického katalogu, doplněná případně o
                     interaktivní formuláře s možností zpětné vazby. Nejvyšší úrovní je internetový obchod s možností
-                    online plateb.</p>
+                    online plateb.
+                  </p>
                 </div>
                 <div class="col-md-6">
                   <dt>C-2-B</dt>
                   <dd><em>Customer to Business</em> (zákazník obchodníkovi)</dd>
-                  <p>Obchodní transakci iniciuje zákazník, když zadává požadavek na určitý produkt za určitou cenu.
+                  <p>
+                    Obchodní transakci iniciuje zákazník, když zadává požadavek na určitý produkt za určitou cenu.
                     Obchodní partner sdělí, zda je ochoten požadavek akceptovat (např. poptávka na pokoj v penzionu).
                   </p>
                 </div>
                 <div class="col-md-6">
                   <dt>C-2-C</dt>
                   <dd><em>Customer to Customer</em> (zákazník zákazníkovi)</dd>
-                  <p>Výměnný obchod mezi lidmi bez prostředníka - internetová spotřebitelská burza či elektronická aukce
-                    (např. použitého zboží, sběratelských předmětů apod.).</p>
+                  <p>
+                    Výměnný obchod mezi lidmi bez prostředníka - internetová spotřebitelská burza či elektronická aukce
+                    (např. použitého zboží, sběratelských předmětů apod.).
+                  </p>
                 </div>
               </div>
             </dl>
@@ -693,7 +706,9 @@
             </ul>
           </p>
           <div class="img-center">
-            <img src="img/PrestaShop.jpg" alt="PrestaShop ukázka" class="img-fluid">
+            <a href="img/content/PrestaShop.jpg" data-lightbox="ecommerce-prestashop" data-title="PrestaShop ukázka">
+              <img src="img/content/PrestaShop.jpg" alt="PrestaShop ukázka" class="img-fluid">
+            </a>
           </div>
         </div>
       </div>
@@ -723,6 +738,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
   </script>
+  <script src="js/lightbox.js"></script>
   <script src="js/sal.min.js"></script>
   <script src="js/main.js"></script>
 </body>
