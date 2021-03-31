@@ -1,17 +1,19 @@
 :root {
-    --purple-sel: #625dc7;
-    --purple: #7d76ff;
-    --grey: #2b2c2f;
+    --purple-selection: #625dc7;
+    --purple: #6e66ff;
+    --dark: #161616;
+    --light-bg: #e4e4e4;
+    --grey-bg: #333333;
 }
 
 ::-moz-selection {
     color: white;
-    background: var(--purple-sel);
+    background: var(--purple-selection);
 }
 
 ::selection {
     color: white;
-    background: var(--purple-sel);
+    background: var(--purple-selection);
 }
 
 html {
@@ -30,7 +32,7 @@ h1 {
 
 h2 {
     font-family: 'Crimson Pro', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -38,17 +40,17 @@ h2 {
 
 h3 {
     color: var(--purple);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center !important;
     margin-top: 2rem;
 }
 
-/* NAVBAR */
-#icon {
-    height: 2.5rem;
+h4 {
+    font-size: 1.3rem;
 }
 
+/* NAVBAR */
 .navbar-nav li {
     padding-left: 0.75rem;
 }
@@ -59,7 +61,7 @@ h3 {
 }
 
 .bg-dark {
-    background-color: var(--grey) !important;
+    background-color: var(--dark) !important;
     padding: 1rem 2rem;
 }
 
@@ -75,10 +77,11 @@ h3 {
 .navbar-dark .navbar-brand:hover,
 .navbar-dark .navbar-nav .nav-link:hover {
     color: var(--purple);
+    transition: all .2s ease-in-out;
 }
 
 .fa-file-code {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 /* HEADER */
@@ -109,7 +112,7 @@ section ul>li {
 section ul>li::before {
     content: "\2022";
     color: var(--purple);
-    font-weight: bold;
+    font-weight: 700;
     display: inline-block;
     width: 1em;
 }
@@ -120,18 +123,17 @@ section hr {
     width: 3%;
 }
 
+.sec-bg-light {
+    background: var(--light-bg);
+}
+
 .sec-bg-grey {
-    background: var(--grey);
+    background: var(--grey-bg);
     color: white;
 }
 
-.sec-bg-purple {
-    background: var(--purple);
-    color: white;
-}
-
-.sec-bg-purple hr {
-    border: 1px solid var(--white);
+.sec-bg-grey h3 {
+    color: var(--purple);
 }
 
 .img-center {
@@ -146,23 +148,103 @@ section hr {
     visibility: hidden;
 }
 
+.table-default, .table-default>td, .table-default>th {
+    background-color: #6e66ff63;
+}
+
 /* FOOTER */
 footer {
-    font-weight: 100;
+    font-weight: 300;
+    padding-top: 1.8rem;
+    padding-bottom: 0.9rem;
     text-align: center;
-    padding: 1.8rem;
 }
 
-footer p {
-    margin-bottom: 0;
+footer i {
+    color: var(--purple);
 }
 
-footer a {
-    color: #918bfdf3;
+.social-media a {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 10px;
 }
 
-footer a:hover {
-    color: var(--purple-sel);
+.social-media i {
+    color: var(--grey-bg);
+}
+
+.social-media a i:hover {
+    color: var(--purple);
+    transform: scale(1.1, 1.1);
+    transform-origin: center, center;
+    transition: all .2s ease-in-out;
+}
+
+.author b {
+    font-weight: 500;
+}
+
+/* SCROLLTOP */
+#scrollToTop {
+    background-color: var(--dark);
+    color: white;
+    display: none;
+    position: fixed;
+    border: none;
+    outline: none;
+    z-index: 99;
+    bottom: 20px;
+    right: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#scrollToTop:hover {
+    background: #505050;
+    transition: all .3s ease-in-out;
+}
+
+/* PPRELOADER */
+.loader-container{
+    width: 100%;
+    height: 100vh;
+    background-color: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.loader{
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    color: #3498db;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader{
+    25%{
+        color: #2ecc71;
+    }
+    50%{
+        color: #f1c40f;
+    }
+    75%{
+        color: #e74c3c;
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 /* MEDIA QUERIES */
@@ -189,6 +271,10 @@ footer a:hover {
 
     .navbar-nav li a {
         font-size: 0.7rem;
+    }
+
+    .card {
+        margin-top: 1.5rem;
     }
 }
 
@@ -229,5 +315,9 @@ footer a:hover {
 
     .hero-text p {
         font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
     }
 }

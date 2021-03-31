@@ -34,6 +34,11 @@
 </head>
 
 <body>
+  <!-- PRELOADER -->
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
   <!-- NAVIGACE -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="/"><i class="fas fa-file-code"></i> Webové aplikace</a>
@@ -47,7 +52,7 @@
           <a class="nav-link" href="#types">Typy aplikací</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#phases">Fáze návrhu</a>
+          <a class="nav-link" href="#dev">Vývoj webu</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#security">Bezpečnostní rizika</a>
@@ -55,7 +60,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#cms">Redakční systémy</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item disabled">
           <a class="nav-link" href="#ecommerce">E-commerce</a>
         </li>
       </ul>
@@ -67,14 +72,14 @@
     <div class="container">
       <div class="row text-white">
         <div class="col-md-5 hero-text">
-          <h1 data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.15s;">Web App</h1>
-          <p data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.4s;">Webová aplikace je aplikace
+          <h1 data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.4s;">Web App</h1>
+          <p data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.6s;">Webová aplikace je aplikace
             poskytovaná
             uživatelům z webového serveru přes internet nebo jinou vnitropodnikovou sít’.</p>
         </div>
         <div class="col-md-7 hero-img">
           <img src="img/hero.png" alt="Webové aplikace - development" class="img-fluid" data-sal="slide-left"
-            style="--sal-duration: 1s; --sal-delay: 0.6s;">
+            style="--sal-duration: 1s; --sal-delay: 0.8s;">
         </div>
       </div>
     </div>
@@ -85,12 +90,10 @@
     <!-- TYPY APLIKACÍ -->
     <span class="anchor" id="types"></span>
     <section class="sec-bg-white">
-      <div class="sec-head" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
-        <h2>Typy webových aplikací</h2>
-        <hr>
-      </div>
-      <div class="row" data-sal="slide-up" style="--sal-duration: 1s; --sal-delay: 1s;">
-        <div class="col-lg-6">
+      <h2 data-sal="slide-up" style="--sal-duration: 0.6s; --sal-delay: 1s;">Typy aplikací</h2>
+      <hr data-sal="slide-up" style="--sal-duration: 1.5s; --sal-delay: 1.2s;">
+      <div class="row justify-content-center">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 1.2s;">
           <h3>Vícevrstvé webové aplikace</h3>
           <p>
             <ul>
@@ -107,64 +110,610 @@
               </ol>
             </ul>
           </p>
-          <div class="img-center">
-            <img src="img/vicevrstve-webove-aplikace.png" alt="Vícevrstvé webové aplikace schéma" class="img-fluid">
+          <div class="row">
+            <div class="col-xl-6 img-center">
+              <img src="img/PLD-vrstvy.jpg" alt="Vícevrstvé webové aplikace schéma" class="img-fluid">
+            </div>
+            <div class="col-xl-6 img-center">
+              <img src="img/MVC-model.jpg" alt="MVC model" class="img-fluid">
+            </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 1.2s;">
           <h3>MVC (Model-View-Controller)</h3>
+          <p>
+            <ul>
+              <li>Architektura moderních webových aplikací velmi často vychází z <strong>návrhového vzoru</strong>
+                (design pattern), označovaného zkratkou MVC (představuje první písmena slov model, view, controller).
+              </li>
+              <li>Základní myšlenkou MVC architektury je <strong>oddělení aplikační logiky od výstupu.</strong></li>
+              <li>Snaží se vyřešit problém tzv. "<em>spaghetti</em>" kódu, typickém zejména pro starší webové aplikace
+                psané v jazyce PHP. Udržování a rozšiřování takových aplikací je velmi náročné, obtížná je i týmová
+                spolupráce.</li>
+              <li>V pojetí MVC je aplikace přehledně rozdělena na komponenty tří typů:</li>
+              <ul>
+                <li><strong>Model</strong> obsahuje logiku aplikace, k níž můžeme zařadit výpočty, databázové dotazy,
+                  validace a podobně. Jeho úkolem je podle zadaných parametrů zpracovat určitá vstupní data a připravit
+                  z nich data výstupní. Nerozhoduje o tom, jak bude se výstupními daty nakonec naloženo, jak budou
+                  zformátována a vypsána; model je zcela oddělen od výstupu.
+                </li>
+                <li><strong>View</strong> (pohled) má na starost zobrazení výstupu dat, která mu byla předána. Může jít
+                  o pohled v podobě výpisu dat (sestavy), ale také o pohled s formulářem. Nejčastěji se k tvorbě pohledů
+                  používají tzv. <strong>šablonovací systémy</strong>, které umožňují do šablony, jejíž rámec tvoří HTML
+                  stránka, vkládat do symbolických bloků proměnné i různé příkazy. Šablony se mohou vzájemně kombinovat
+                  a doplňovat - může např. existovat určitá výchozí šablona s layoutem stránek, kterou využívají a
+                  doplňují další šablony.
+                </li>
+                <li><strong>Controller</strong> zprostředkovává komunikaci mezi klientem, modelem a pohledem. Každá
+                  entita mívá svůj vlastní controller - <em>UserController, ArticleController</em> atd.
+                </li>
+              </ul>
+              <li><strong>Životní cyklus stránky</strong> zahajuje uživatel, který zadá do prohlížeče adresu webu a
+                parametry: http://www.server.com/article/detail/5
+                Požadavek zpracuje neprve router, který podle zadaných parametrů zajistí jeho přesměrování na správný
+                <strong>router</strong>. V tomto případě bude volán <em>ArticleController</em> a budou mu předány
+                parametry view a 5.
+                Controller na základě parametrů provede příslušné akce: zavolá model, jehož úkolem je v databázi najít
+                článek s id 5, a získaná data poté controller předá pohledu (view) s názvem detail.
+                Data jsou vložena na určené místo v šabloně a pohled je vyrenderován.
+              </li>
+            </ul>
+          </p>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
           <h3>Webová API</h3>
+          <p>
+            <ul>
+              <li><strong>API</strong> (<em>Application Programming Interface</em>) označuje v informatice rozhraní pro
+                programování aplikací.</li>
+              <li>Jde o komplex procedur, funkcí, tříd či protokolů nějaké knihovny, které může programátor využívat.
+                API určuje, jakým způsobem jsou funkce knihovny volány ze zdrojového kódu programu.</li>
+              <li>V programátorské praxi se můžeme setkat s celou řadou API - například s <strong>API operačních
+                  systémů</strong> (unixové systémy používají standard POSIX, OS od Microsoftu zase Windows API),
+                <strong>grafickými API</strong> (OpenGL, DirectX, Vulkan) nebo s <strong>API databázových a informačních
+                  systémů</strong>.</li>
+              <li>API se nyní hojně využívá při <strong>vývoji mobilních i webových aplikací</strong> a tvorbě
+                internetových stránek. Smyslem <strong>webových API</strong> je zajištění komunikace mezi dvěma
+                platformami, které si vzájemně vyměňují data. Umožňují využívat již naprogramovaná řešení a integrovat
+                je do vlastních webů.</li>
+              <li>V praxi se s integrací aplikačního rozhraní setkáváme třeba na stránkách zobrazujících polohu obchodu
+                na Google mapách. V takovém případě je využito <strong>API</strong> z <strong>Google Map</strong>, které
+                volají vrstvu kódu, jež zobrazuje požadovaná data.</li>
+              <li>Další populární webová API:</li>
+              <ul>
+                <li><em>YouTube API</em> – umožňují vývojářům integrovat videa a další funkcionalitu této populární
+                  multimediální platformy. Rozhraní lze tedy využít například pro zobrazení streamů na webu nebo pro
+                  vložení playlistu.</li>
+                <li><em>Flickr API</em> – nabízí přístup k databázi této populární sociální sítě na sdílení fotografií.
+                </li>
+                <li><em>Twitter API</em> – pro sdílení tweetů nebo využití dat z vyhledávání.</li>
+                <li><em>Amazon API</em> – umožňují na webu zobrazovat produkty nabízené na stránkách Amazonu. Mohou tak
+                  být využity jako prostředek pro zpeněžení (monetizaci) stránek.</li>
+              </ul>
+            </ul>
+          </p>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Typy webových API</h3>
+          <p>
+            <ul>
+              <li>K implementaci API lze přistupovat několika způsoby. Nejstarším prostředkem zůstává takzvaný
+                <em>Simple Object Access Protocol</em>, zkráceně <strong>SOAP</strong>, určený pro volání procedur za
+                využití <strong>XML</strong>. Jeho cílem je snazší <strong>sdílení informací různých aplikací</strong>,
+                běžících v různých prostředích nebo v různých jazycích. Jedná se tedy o nástroj odstraňující bariéry
+                mezi odlišnými platformami. Dnes je využíván převážně <strong>bankami a pojišťovnami</strong>; v ČR
+                tento typ API využívá systém EET.</li>
+              <li>V širším měřítku je ovšem vytlačován <strong>REST API</strong> (někdy <em>RESTfull API</em>). REST API
+                je, na rozdíl od SOAP, <strong>architektura fungující na principu klient-server</strong>, kdy veškerá
+                uživatelská data zůstávají uložena na straně klienta. Díky tomu by nemělo dojít k úniku citlivých dat.
+                Jedná se o pravděpodobně nejpoužívanější řešení určené k tvorbě aplikačních rozhraní. Ke své funkci
+                využívá HTTP protokol.</li>
+              <li>Následníkem REST API je <strong>GRAPHQL</strong>, původně vyvíjené Facebookem, který ho také používá v
+                rámci své sociální sítě. Časem se z něj stal open-source a může tak být bezplatně využíván širokou
+                veřejností. GRAPHQL je <strong>jazyk dotazů</strong>, který běží <strong>na straně serveru</strong>.
+                Umožňuje stahovat data <strong>z více zdrojů najednou</strong>, což znatelně ulehčuje práci
+                programátorů. Nabízí <strong>větší rychlost zpracování</strong> než REST API, má bohatší škálu využití,
+                <strong>není závislý na architektuře</strong> a lze ho implementovat i nad stávající REST API.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>REST API</h3>
+          <p>
+            <ul>
+              <li><strong>REST API</strong> je architektura rozhraní <strong>pro distribuované systémy</strong>. Úzce
+                souvisí s HTTP a je datově orientovaná - určuje způsoby, jakými lze přistupovat k datům.</li>
+              <li>Odděluje klientskou a serverovou část, díky čemuž je stejně jako GraphQL nezávislá na platformě a
+                umožňuje nezávislý vývoj serveru a klienta. Klient pak při dotazech potřebuje znát tzv.
+                <strong>endpointy</strong> (koncové body - předepsané URL požadavky), na které zasílá dotazy (případně i
+                data).</li>
+              <li><strong>Komunikace</strong> mezi klientem a serverem je <strong>bezestavová</strong>, server neukládá
+                žádné informace a veškerou odpovědnost přenáší na klienta.</li>
+              <li>Klient tedy musí dotaz uspořádat tak, aby byly využity všechny související koncové body, přičemž má
+                každý zdroj svůj vlastní identifikátor, který musí být v případě nutnosti zavolán.</li>
+              <li>Za účelem <strong>snížení latence</strong> (odezvy) REST API využívá <strong>cache</strong>,
+                mezipaměť, do které ukládá dotazy při větším objemu dat, nebo před dalším použitím. Data tedy musejí být
+                označena buď jako kešovatelná, nebo nekešovatelná. Pokud jsou kešovatelná, systém předpokládá, že se s
+                nimi bude v budoucnu ještě pracovat a ponechá je ve zmíněné mezipaměti. Touto cestou se zlepšuje výkon
+                na straně klienta. Na druhou stranu ovšem narůstá šance na ztrátu aktuálnosti informací.</li>
+            </ul>
+          </p>
+          <div class="img-center">
+            <img src="img/REST-API.png" alt="REST API schéma" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Aplikace s využitím WebSocket</h3>
+          <p>
+            <ul>
+              <li><strong>WebSocket</strong> je nezávislý počítačový <strong>komunikační protokol</strong>, poskytující
+                <strong>plně duplexní (obousměrný) komunikační kanál přes jediné TCP připojení.</strong></li>
+              <li>Je navržen tak, aby mohl být prováděn ve webových prohlížečích a na webových serverech, ale může být
+                použita jakákoliv klientská a serverová aplikace.</li>
+              <li>Jeho jediný vztah k HTTP je, že jeho <em>handshake</em> (navázání spojení) je interpretováno HTTP
+                servery jako požadavek na upgrade.</li>
+              <li>Umožňuje interakci mezi prohlížečem a webovým serverem s nižší režií, <strong>usnadňuje real-time
+                  přenos dat</strong>. Využívá se pro vytváření aplikací v reálném čase, jako jsou <strong>online chaty,
+                  kooperativní služby</strong> (např. sdílená tabule, videokonference), <strong>online hry</strong>
+                apod.</li>
+              <li>V současné době je <strong>podporován většinou hlavních prohlížečů</strong>, vyžaduje však podporu
+                také na straně serveru.</li>
+              <li>Nejčastěji se k vývoji těchto aplikací používá <em>Javascriptová</em> knihovna
+                <strong>Socket.IO</strong>, kterou tvoří klientská část a serverová část určená pro Node.js. Obě tyto
+                komponenty mají identické API.</li>
+              <li>Aplikace využívající Socket.IO jsou založeny nejčastěji na vysílání (<em>socket.emit</em>) a přijímání
+                (<em>socket.on</em>) zpráv mezi klienty, kteří jsou prostřednictvím socketů připojeni k serveru.</li>
+            </ul>
+          </p>
+          <div class="img-center">
+            <img src="img/Websocket.png" alt="Socket.io schéma" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
           <h3>Django framework</h3>
+          <p>
+            <ul>
+              <li><strong>Django</strong> je open source <strong>webový aplikační framework napsaný v Pythonu</strong>,
+                který byl pojmenován po jazzovém kytaristovi <em>Django Reinhardtovi</em>.</li>
+              <li>Hlavní úkol Djanga je snadné vytvoření komplexních, databází řízených webových aplikací. Zaměřuje se
+                na znovupoužitelnost, propojitelnost komponent a rychlý vývoj v duchu „<strong>DRY</strong>“ (<em>Don’t
+                  Repeat Yourself</em> – "neopakuj sám sebe").</li>
+              <li>Django vychází z architektury MVC (Model-View-Controller), jež je v tomto případě modifikována do
+                podoby <strong>MVT</strong> (<em>Model-View-Template</em>). Centrálním řídicím prvek aplikace je totiž
+                systém zobrazení (<strong>View</strong>), který operace s daty řeší ve spolupráci s modelem a samotné
+                zobrazení stránek zajišťují tzv. <strong>šablony</strong> (<strong>templates</strong>) s podporou
+                <em>šablonovacího systému.</em></li>
+              <li><strong>Datový model</strong> je definován pomocí tříd v Pythonu a prostřednictvím objektově relačního
+                mapování (<strong>ORM</strong>) může být fyzicky realizován v různých relační databázových systémech.
+              </li>
+              <li>K specifickým rysům Djanga patří možnost <strong>automatické tvorby administrace projektu</strong>,
+                která je generována dynamicky podle datového modelu.</li>
+              <li>Framwork navíc nabízí:</li>
+              <ul>
+                <li>Odlehčený, samostatný webový server pro vývoj a testování.</li>
+                <li>Serializační a validační systém pro formuláře, který automaticky překládá data mezi formulářem HTML
+                  a hodnotami vyhovujícími databázi.</li>
+                <li>Cachovací framework, který nabízí několik různých metod cachování.</li>
+                <li>Podporu tříd, které mohou zasáhnout v různých stádiích vyřizování požadavku a provést vlastní
+                  funkce.</li>
+                <li>Vnitřní komunikační systém pro komunikaci mezi komponentami pomocí předem dohodnutých signálů.</li>
+                <li>Možnost překladu všech komponent do libovolného jazyku.</li>
+                <li>Serializační systém, který může produkovat nebo číst reprezentaci XML a/nebo JSON instancí modelu
+                  Django.</li>
+                <li>Systém rozšiřujících schopností šablonovacího enginu.</li>
+              </ul>
+            </ul>
+          </p>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Django aplikace</h3>
+          <p>
+            <ul>
+              <li><strong>Projekt</strong> je chápán jako nejvyšší úroveň v Djangu a může být vytvořen z příkazové řádky
+                příkazem: <em>python django-admin.py startproject</em> (název projektu). Součástí projektu může být
+                jedna nebo více aplikací.</li>
+              <li>Každá <strong>aplikace</strong> musí být zaregistrována v konfiguračním souboru
+                <strong>settings.py</strong>, který je společný všem aplikacím v Djangu. Součástí konfiguračního souboru
+                je mimo jiné nastavení připojení k databázi a připojení k SMTP serveru pro snadné posílání emailů,
+                konfigurace tzv. middleware (komponenty, které v aplikaci zajišťují určité speciální služby - např.
+                autentizaci nebo zabezpečení), nastavení časového pásma, registrace aplikací do projektu nebo deklarace
+                důležitých konstant.</li>
+              <li>Projekt i jednotlivé aplikace je možné spravovat pomocí skriptu <strong>manage.py</strong>. Mezi jeho
+                základní úlohy patří vytvoření základní struktury nové aplikace (<em>python manage.py startapp</em>),
+                vytvoření databázového schématu a provedení tzv. <strong>migrací</strong> (</em>python manage.py
+                makemigrations, python manage.py migrate</em>) nebo <strong>spouštění testovacího webového
+                  serveru</strong> (<em>python manage.py runserver</em>).</li>
+              <li>Soubory pojmenované <strong>urls.py</strong> mají na starost směrování požadavků na jednotlivé view,
+                které se nacházejí v souboru <strong>views.py</strong>. Soubory <strong>models.py</strong> obsahují
+                modely pro danou aplikaci.</li>
+              <li><strong>Šablony</strong> pro zobrazení stránek mají strukturu souborů HTML obohacených o instrukce
+                (makra) šablonovacího systému. Jsou uloženy ve složce <strong>templates.</strong></li>
+              <li>Samotný <strong>šablonovací systém</strong> je velice flexibilní a nabízí vytváření vlastních
+                rozšíření i využití dědičnosti šablon. Ta umožňuje v potomkovi předefinovat či rozšířit sekce definované
+                v předkovi: <em>{% block nazev_sekce %} … {% endblock %}</em></li>
+            </ul>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- FÁZE NÁVRHU -->
-    <span class="anchor" id="phases"></span>
-    <section class="sec-bg-grey">
-      <div class="sec-head" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
-        <h2>Fáze návrhu webových aplikací</h2>
-        <hr>
+    <!-- VÝVOJ WEBU -->
+    <span class="anchor" id="dev"></span>
+    <section class="sec-bg-light">
+      <h2 data-sal="slide-up" style="--sal-duration: 0.6s; --sal-delay: 0.4s;">Vývoj webu</h2>
+      <hr data-sal="slide-up" style="--sal-duration: 1.5s; --sal-delay: 0.6s;">
+      <div class="row justify-content-center p-4">
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">1. Strategie</h4>
+              <p class="card-text">Hledání kompromisu mezi potřebami uživatelů budoucí aplikace a zájmů tvůrců aplikace.
+                Je třeba zjistit a pochopit cílovou skupinu uživatelů, jejich způsob uvažování a zvyky, zohlednit je v
+                návrhu aplikace.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-2.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">2. Požadavky</h4>
+              <p class="card-text">Na základě získaných informací jsou specifikovány všechny funkce a možnosti, jež by
+                měla aplikace a její GUI pokrývat. Výsledkem by měl být dokument s popisem požadovaných funkcí a forem
+                obsahu.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-3.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">3. UX/UI Design</h4>
+              <p class="card-text">V této fázi se řeší tzv. UX/UI design. Jednoduše jde o předběžný návrh architektury a
+                grafiky stránek. Tato fáze je velmi důležitá pro programátory, aby věděli, jak má požadovaná aplikace
+                vypadat a fungovat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-4.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">4. Vývoj stránek</h4>
+              <p class="card-text">V této fázi již probíhá samotný vývoj stránek kodérem či programátorem. Nejprve jde o
+                kódování základní kostry stránek, dále také probíhá stylizování a programování stránek na straně jak
+                klienta, tak na straně serveru.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-5.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">5. Testování</h4>
+              <p class="card-text">Po dokončení stránek je web vystaven na testovací prostředí, umístěném na testovací
+                doméně na serveru a následuje akceptační fáze. Během této fáze je web testován z pohledu funkčností,
+                provádějí se zde i obsahové korektury, apod.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-6" data-sal="slide-up" style="--sal-duration: 1.2s; --sal-delay: 0.8s;">
+          <div class="card">
+            <img class="card-img-top" src="img/vyvoj-6.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">6. Uvedení do provozu</h4>
+              <p class="card-text">Po schválení webu ze zákazníkovy strany dojde ke spuštění webu do ostrého provozu –
+                jeho umístění (migrace) na hostingový server, uvolnění k indexaci vyhledávačům a jeho registraci ve
+                vyhledávačích.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- BEZPEČNOSTNÍ RIZIKA -->
     <span class="anchor" id="security"></span>
-    <section class="sec-bg-purple">
-      <div class="sec-head" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
-        <h2>Bezpečnostní rizika webových aplikací</h2>
-        <hr>
+    <section class="sec-bg-grey">
+      <h2 data-sal="slide-up" style="--sal-duration: 0.6s; --sal-delay: 0.4s;">Bezpečnostní rizika</h2>
+      <hr data-sal="slide-up" style="--sal-duration: 1.5s; --sal-delay: 0.6s;">
+      <div class="row justify-content-center">
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Cross-site scripting</h3>
+          <p>
+            <ul>
+              <li><strong>Cross-site scripting (XSS)</strong> je metoda narušení WWW stránek <strong>využitím
+                  bezpečnostních chyb ve skriptech</strong> (především <strong>neošetřené vstupy</strong>).</li>
+              <li>Útočník díky těmto chybám v zabezpečení webové aplikace dokáže do stránek <strong>podstrčit svůj
+                  vlastní javascriptový kód</strong>, což může využít buď pouze k poškození vzhledu stránky, jejímu
+                znefunkčnění, získávání
+                citlivých údajů návštěvníků stránek nebo obcházení bezpečnostních prvků aplikace.</li>
+              <li>Často je též využíván při <em>phishingu</em> tak, že je skrze XSS zranitelnosti uživateli ukázán jiný
+                obsah na
+                jinak důvěryhodné stránce.</li>
+              <strong>Obrana:</strong>
+              <li>V textech zadávaných uživateli je třeba speciální znaky nahrazovat entitami.</li>
+              <li>Kontrolovat URL od uživatele, která jdou do obrázků, odkazů a podobně, protože mohou začínat např. na
+                javascript:. Kvůli různým variacím a budoucím změnám je vhodné použít pro tuto kontrolu whitelist.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Cross-site request forgery</h3>
+          <p>
+            <ul>
+              <li><strong>Cross-site request forgery (XSRF)</strong> je <strong>pasivní útok</strong>, kdy
+                <strong>útočník nachystá na nějakou stránku kód, který způsobí vyvolání URL na nějakém jiném
+                  serveru</strong>, kde uživatel může být stále přihlášen.</li>
+              <strong>Obrana:</strong>
+              <li>Důležité akce (třeba převod peněz) je třeba potvrzovat, do přihlašovacích formulářů je třeba přidávat
+                náhodně generované hodnoty.</li>
+              <li>V administrační části internetových aplikací, pro akce, které mažou určité záznamy nebo je jiným
+                způsobem mění, se doporučuje zásadně používat HTTP metodu POST.</li>
+              <li>Používat autorizační token – náhodně vygenerovaný řetězec pro danou akci a pro aktuálního uživatele.
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Clickjacking</h3>
+          <p>
+            <ul>
+              <li><strong>Clickjacking. Cizí stránka</strong>, na kterou je veden útok, <strong>je zobrazena na
+                  útočníkově stránce v iframe</strong> tak, že je vidět jen část bez bližšího kontextu. (Je možné využít
+                i opacity v CSS.) <strong>Uživatel je naveden ke kliknutí na tuto část stránky</strong>, čímž provede
+                nějakou akci, například hlasování v anketě.</li>
+              <strong>Obrana:</strong>
+              <li>Lze se bránit hlavičkou X-Frame-Options, která je v některých prohlížečích podporována, a
+                Javascriptem. Princip spočívá v zabránění zobrazení stránky v rámci.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Session hijacking</h3>
+          <p>
+            <ul>
+              <li><strong>Session hijacking</strong> je útok, při kterém <strong>útočník odposlechne cookie použité pro
+                  označení úspěšně autentizovaného uživatele</strong>, a začne se za něj vydávat.</li>
+              <strong>Obrana:</strong>
+              <li>Session cookies musí mít označení secure, tedy mohou být poslána jen přes šifrovaná SSL spojení.</li>
+              <li>V případě předávání session ID přes URL je obrana komplikovanější, vyžaduje zabránit úniku URL přes
+                referer (odkazy, obrázky, ...) a Session fixation.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Phishing</h3>
+          <p>
+            <ul>
+              <li><strong>Phishing</strong> je aktivní útok využívající sociální inženýrství, při kterém <strong>útočník
+                  vydává svoje vlastní webové stránky za oficiální stránky instituce / aplikace, aby získal přihlašovací
+                  údaje uživatele.</strong></li>
+              <strong>Obrana:</strong>
+              <li>Vzdělávání uživatelů v kontrole autentizace serveru, použití Extended Validation SSL Certificates.
+              </li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-xl-4 col-md-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>SQL Injection</h3>
+          <p>
+            <ul>
+              <li><strong>SQL Injection</strong> je technika <strong>napadení databázové vrstvy programu</strong>
+                vsunutím (odtud „<em>injection</em>“) kódu přes neošetřený vstup a <strong>vykonání vlastního
+                  pozměněného SQL dotazu</strong>.</li>
+              <strong>Obrana:</strong>
+              <li>Důsledné používání tzv. <em>PreparedStatement</em> a jeho setXXX() metod pro nastavování hodnot.</li>
+              <li>Tam kde se nejedná o hodnotu (třeba název sloupce v ORDER BY), zkontrolovat vstup regulárním výrazem
+                na očekávané hodnoty.</li>
+            </ul>
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- REDAKČNÍ SYSTÉMY -->
     <span class="anchor" id="cms"></span>
     <section class="sec-bg-white">
-      <div class="sec-head" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
-        <h2>Redakční systémy</h2>
-        <hr>
+      <h2 data-sal="slide-up" style="--sal-duration: 0.6s; --sal-delay: 0.4s;">Redakční systémy</h2>
+      <hr data-sal="slide-up" style="--sal-duration: 1.5s; --sal-delay: 0.6s;">
+      <div class="row justify-content-center">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Funkce redakčních systémů</h3>
+          <p>
+            <ul>
+              <li>Zkratkou <strong>CMS</strong> (Content Management System = systémy pro správu obsahu) je označován
+                software, pro který se vžil častěji používaný název <strong>redakční systém</strong>.</li>
+              <li>Jedná se zpravidla o <strong>komplexní webovou aplikaci</strong> používanou pro tvorbu a úpravu obsahu
+                webu bez znalostí kódování. </li>
+              <li>CMS tak může <strong>ušetřit náklady na aktualizaci obsahu webu</strong>, protože změny částí stránek
+                může provádět i zaškolená obsluha bez znalosti kódu HTML, CSS či dalších technologií.</li>
+              <li>V současnosti existuje celá řada redakčních systémů, které se vzájemně liší svými funkcemi i možnostmi
+                použití. K předchůdcům CMS patří různá administrační rozhraní pro vkládání novinek a aktualit.</li>
+              <li>Složitější CMS umožňují vkládání různých článků a spotů (včetně tabulek a obrázků) do předem určených
+                kategorií, případně úpravu všech textů na webu.</li>
+              <li>Používají se k tomu tzv. <strong>WYSIWYG</strong> editory, jejichž ovládání se velmi podobá ovládání
+                běžných desktopových textových procesorů (např. MS Word), které fungují v internetových prohlížečích a v
+                pozadí generují HTML kód.</li>
+              <li>Častou funkcí CMS je i správa obrázků a celých fotogalerií, většina redakčních systémů obsahuje i
+                moduly pro správu multimediálního obsahu, včetně audio a video souborů.</li>
+              <li>Výjimkou není ani možnost spravovat diskuse a komentáře.</li>
+              <li>Vyspělé CMS dokáží přímo manipulovat se strukturou webu a s využitím různých přídavných modulů
+                přizpůsobovat funkce redakčního systému konečnému záměru - s jejich pomocí je tak možné vytvářet
+                weblogy, firemní stránky, elektronické obchody, zpravodajské portály atd.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Populární redakční systémy</h3>
+          <p>
+            <ul>
+              <li>Mezi populární a velmi rozšířené CMS patří <em>Wordpress</em>, <em>Joomla!</em> a <em>Drupal</em>.
+              </li>
+              <li><strong>WordPress</strong> je open source redakční systém napsaný v jazyce PHP a využívající
+                databázový systém MySQL. Původně byl vyvinut se záměrem poskytnout platformu pro co nejpohodlnější
+                zprovoznění blogovacího systému, ale díky rozsáhlé komunitě programátorů a existenci mnoha rozšíření je
+                dnes základem nejrůznějších webových projektů. Jednou z výhod Wordpressu je snadná instalace jádra
+                systému, po níž může následovat instalace různých doplňků (pluginů) i šablon grafického vzhledu (témat).
+              </li>
+              <li>Redakční systém je spravován prostřednictvím <strong>administrační části aplikace</strong> (back-end),
+                do níž mají přístup uživatelé podle nadefinovaných oprávnění.</li>
+              <li>V administraci lze měnit nastavení systému, instalovat i přizpůsobovat <strong>pluginy i
+                  témata</strong>, aktualizací, instalace a přizpůsobení témat), definovat strukturu webu (provádět
+                změny menu, vytvářet kategorie i tzv. štítky), editovat a publikovat příspěvky (články v podobě
+                aktualit) nebo statické stránky, vytvářet galerie obrázků i multimédií, sledovat statistiky přístupů a
+                provádět řadu dalších operací.</li>
+              <li>Wordpress kromě jiného podporuje využití <strong>RSS</strong> kanálů a metod
+                <strong>Trackback</strong> i <strong>Pingback</strong> (způsoby jak informovat určitou stránku, že je na
+                ni z jiné stránky odkazováno; bohužel rovněž časté nástroje spammerů).</li>
+              <li>Nevýhodou Wordpressu, ale i jiných rozšířených CMS je množství útoků, které využívají slabých míst
+                těchto systémů k jejich ovládnutí, poškození nebo i zneužití k jiné kybernetické kriminalitě. Při
+                nasazení jakéhokoliv redakčního systému je proto nezbytné důsledně dodržovat všechny bezpečnostní
+                zásady, zejména pravidelně aktualizovat jádro systému, ale i pluginy.</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col-12 m-4 table-responsive" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <table class="table table-default">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Název CMS</th>
+                <th scope="col">Stažení</th>
+                <th scope="col">Šablon zdarma</th>
+                <th scope="col">Pluginů zdarma</th>
+                <th scope="col">Jednoduchost systému</th>
+                <th scope="col">SEO</th>
+                <th scope="col">Škálovatelnost</th>
+                <th scope="col">Nejlépe se používá pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Wordpress</td>
+                <td>140 milionů</td>
+                <td>2500+</td>
+                <td>3100+</td>
+                <td>velmi jednoduchý</td>
+                <td>silné</td>
+                <td>skvělý pro malé a střední weby - nezvládá velké množství obsahu</td>
+                <td>blogy, firemní stránky, menší až střední weby</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Joomla!</td>
+                <td>50 milionů</td>
+                <td>900+</td>
+                <td>8000+</td>
+                <td>jednoduchý</td>
+                <td>slabé</td>
+                <td>sestaveno pro podniky - správa velkého množství obsahu</td>
+                <td>e-commerce, sociální sítě</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Drupal</td>
+                <td>15 milionů</td>
+                <td>1900+</td>
+                <td>2500+</td>
+                <td>složitý</td>
+                <td>silné</td>
+                <td>extrémně škálovatelný</td>
+                <td>vše</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <!-- E-COMMERCE -->
     <span class="anchor" id="ecommerce"></span>
-    <section class="sec-bg-grey">
-      <div class="sec-head" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
-        <h2>E-commerce</h2>
-        <hr>
+    <section class="sec-bg-light">
+      <h2 data-sal="slide-up" style="--sal-duration: 0.6s; --sal-delay: 0.4s;">E-commerce</h2>
+      <hr data-sal="slide-up" style="--sal-duration: 1.5s; --sal-delay: 0.6s;">
+      <div class="row justify-content-center">
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>E-commerce</h3>
+          <p>
+            <ul>
+              <li>Pojem e-commerce je používán k označení různých obchodních transakcí realizovaných prostřednictvím
+                Internetu a dalších elektronických prostředků. Podle cílové skupiny rozlišujeme několik typů e-commerce:
+              </li>
+            </ul>
+            <dl>
+              <div class="row mt-4 p-4">
+                <div class="col-md-6">
+                  <dt>B-2-B</dt>
+                  <dd><em>Business to Business</em> (obchodník obchodníkovi)</dd>
+                  <p>Většinou fungují na principu elektronické výměny dat (objednávek, faktur). Vyšším stupněm jsou
+                    internetová tržiště pro zprostředkování obchodů. Nejvyspělejší variantou jsou komunikační a
+                    distribuční sítě, kde dochází k transakcím v reálném čase, včetně finančních a logistických operací.
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <dt>B-2-C</dt>
+                  <dd><em>Business to Customer</em> (obchodník zákazníkovi)</dd>
+                  <p>Na základní úrovni je to webová stránka plnící funkci elektronického katalogu, doplněná případně o
+                    interaktivní formuláře s možností zpětné vazby. Nejvyšší úrovní je internetový obchod s možností
+                    online plateb.</p>
+                </div>
+                <div class="col-md-6">
+                  <dt>C-2-B</dt>
+                  <dd><em>Customer to Business</em> (zákazník obchodníkovi)</dd>
+                  <p>Obchodní transakci iniciuje zákazník, když zadává požadavek na určitý produkt za určitou cenu.
+                    Obchodní partner sdělí, zda je ochoten požadavek akceptovat (např. poptávka na pokoj v penzionu).
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <dt>C-2-C</dt>
+                  <dd><em>Customer to Customer</em> (zákazník zákazníkovi)</dd>
+                  <p>Výměnný obchod mezi lidmi bez prostředníka - internetová spotřebitelská burza či elektronická aukce
+                    (např. použitého zboží, sběratelských předmětů apod.).</p>
+                </div>
+              </div>
+            </dl>
+          </p>
+        </div>
+        <div class="col-lg-6" data-sal="slide-up" style="--sal-duration: 0.8s; --sal-delay: 0.8s;">
+          <h3>Elektronické obchody</h3>
+          <p>
+            <ul>
+              <li><strong>Elektronický obchod</strong> (<em>e-shop</em>) je webová aplikace sloužící k nabídce a
+                vyhledání zboží (služeb) s možností si je objednat (katalog zboží, elektronický košík).</li>
+              <li>E-shop je většinou realizován jako sada skriptů, které spolupracují s databází, v níž jsou uloženy
+                detaily o zboží.</li>
+              <li>Aby co nejvíce ulehčil práci administrátorům, obsahuje kromě front-end aplikace pro zákazníky také
+                back-end s řadou dalších funkcí - např. evidenci zboží, možnost úpravy cen, agendu skladu, možnost
+                řešení reklamací, napojení na účetnické či logistické programy atd.</li>
+              <li>E-shop lze pořídit jako aplikaci připravenou na míru, využít některý z hotových produktů a případně
+                zvolit vhodnou konfiguraci funkcí, pronajmout si e-shop jako internetovou službu nebo přizpůsobit
+                vlastním požadavkům open source aplikace - např. <em>PrestaShop</em> nebo <em>OpenCart</em>.</li>
+            </ul>
+          </p>
+          <div class="img-center">
+            <img src="img/PrestaShop.jpg" alt="PrestaShop ukázka" class="img-fluid">
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="container-fluid">
-    <p class="author">Vytvořil s <i class="fas fa-heart"></i> <b><a href="https://github.com/lukyncze">Lukáš
-          Sukeník</a></b></p>
+    <div class="author">Vytvořil s <i class="fas fa-heart"></i> <b>Lukáš Sukeník</b></div>
+    <div class="social-media">
+      <a href="https://github.com/lukyncze"><i class="fa fa-github"></i></a>
+      <a href="http://lukyn.eu"><i class="fas fa-laptop-code"></i></a>
+      <a href="https://www.linkedin.com/in/luk%C3%A1%C5%A1-suken%C3%ADk-76ba291a4/"><i class="fa fa-linkedin"></i></a>
+    </div>
   </footer>
+
+  <!-- SCROLL TO TOP -->
+  <div id="scrollToTop">
+    <i class="fas fa-chevron-up"></i>
+  </div>
 
   <!-- JAVASCRIPTS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
