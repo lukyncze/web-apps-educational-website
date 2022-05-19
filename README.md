@@ -1,4 +1,4 @@
-﻿# Webové aplikace - vzdělávací stránka
+# Webové aplikace - vzdělávací stránka
 
 * Výsledkem práce je web, který má sloužit jako vzdělávací stránka na téma "Webové aplikace".
 * Projekt byl vypracován jako zadání ze školy (SŠPU Opava).
@@ -7,4 +7,4 @@
 * [Lightbox](https://github.com/lokesh/lightbox2)
 * [Sal.js](https://github.com/mciastek/sal)
 
-Výsledek bude zveřejněn na vlastní [webové stránce](http://lukyn.eu/web-apps.html).
+Výsledek bude zveřejněn na vlastní [webové stránce](https://lukyncze-web-apps-educational-website.netlify.app/).
